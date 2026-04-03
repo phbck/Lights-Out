@@ -5,7 +5,7 @@ import os
 # --- Configuration ---
 n = 5  
 WIDTH, HEIGHT = 800, 800
-BG_COLOR = (30, 30, 30)
+BG_COLOR = (58,58,58)
 
 # Screenshot Settings
 SAVE_SCREENSHOTS = False
@@ -13,9 +13,9 @@ screenshot_counter = 0
 os.makedirs("screenshots", exist_ok=True)
 
 # Colors
-COLOR_OFF = (46, 204, 113)  # Green
-COLOR_ON = (231, 76, 60)    # Red
-COLOR_BLUE = (52, 152, 219) # Blue
+COLOR_OFF = (20, 20, 20)  # Green
+COLOR_ON = (250, 222, 10)    # Red
+COLOR_MARK = (14, 181, 227) # Blue
 
 class LightsOut():
     def __init__(self, size):
@@ -68,7 +68,7 @@ def draw_board(surface, game_instance, box_size, gap, off_x, off_y):
             
             # Logic: If marked blue, use blue. Otherwise, use game logic.
             if game_instance.blue_mask[i, j]:
-                color = COLOR_BLUE
+                color = COLOR_MARK
             else:
                 color = COLOR_OFF if game_instance.board[i, j] == 'X' else COLOR_ON
                 
